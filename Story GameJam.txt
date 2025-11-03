@@ -1,0 +1,17 @@
+Story--
+	You have returned to your home village after some time away learning more about your cultures history.
+Upon returning to your home, you find a note from your parents that reads.
+	"Dear Sparrow, We are taking a few weeks to go visit your grand parents. We are leaving you in charge of the house hold. You are responsible for making sure Neely is taken care of. Make sure she is in the house every evening by [TIME]. Also, you have to be sure to feed Sampson 3 times a day. If you have any troubles, you can go see Mr. Hickory the INN keeper, he might be able to lend a helping hand if needed. Please be careful and don't have too much fun."
+	--Mom & Dad
+
+
+
+
+Looking around the house you can't find Neely anywhere. Let's head out into the village and find her.
+
+
+Let's just say you have to find here 2 times and then on the 3rd time is when she is taken by the end boss which will be the cute but dangerous factor.
+
+
+Where will she be the first time? In a place somewhere. The INN keeper will give us a hint on where she might be.
+[How many buildings are going to be interactable? All of those will have to have separate scenes and dialog]
