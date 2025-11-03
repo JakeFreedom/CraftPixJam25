@@ -1,27 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://b5a2qkosmyh50"]
 
-[ext_resource type="Texture2D" uid="uid://d2ef1qtv7vp6e" path="res://Player/WalkDown-2.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://bgwbip2glkehs" path="res://character_body_2d.gd" id="1_sweqy"]
-[ext_resource type="Texture2D" uid="uid://dcsyg3sntf04x" path="res://Player/WalkLeft.png" id="2_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dfrfcnsbtqpxh" path="res://Player/WalkRight.png" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://ckkhusiqwq235" path="res://Player/WalkingUP.png" id="4_hqtel"]
-[ext_resource type="Texture2D" uid="uid://c8lajv14h878d" path="res://Player/Idle1.png" id="6_2hs0m"]
-
-[sub_resource type="Animation" id="Animation_2hs0m"]
-resource_name = "WalkUp"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WalkUp:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.30487, 0.598891, 0.897252, 1.16667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1, 0]
-}
+[ext_resource type="Texture2D" uid="uid://d2ef1qtv7vp6e" path="res://Player/Images/WalkDown-2.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bgwbip2glkehs" path="res://Player/player.gd" id="1_sweqy"]
+[ext_resource type="Texture2D" uid="uid://dcsyg3sntf04x" path="res://Player/Images/WalkLeft.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dfrfcnsbtqpxh" path="res://Player/Images/WalkRight.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://ckkhusiqwq235" path="res://Player/Images/WalkingUP.png" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://c8lajv14h878d" path="res://Player/Images/Idle1.png" id="6_2hs0m"]
 
 [sub_resource type="Animation" id="Animation_1jxqw"]
 length = 0.001
@@ -122,6 +106,22 @@ tracks/0/keys = {
 "values": [0, 1, 2, 1, 0]
 }
 
+[sub_resource type="Animation" id="Animation_2hs0m"]
+resource_name = "WalkUp"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkUp:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.30487, 0.598891, 0.897252, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dw050"]
 _data = {
 &"RESET": SubResource("Animation_1jxqw"),
@@ -132,10 +132,14 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 7.0
 
 [node name="Player" type="Node2D"]
+z_index = 1
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(283, 152)
+collision_mask = 2
 script = ExtResource("1_sweqy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
@@ -174,3 +178,6 @@ hframes = 3
 visible = false
 texture = ExtResource("6_2hs0m")
 centered = false
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(37, 30)

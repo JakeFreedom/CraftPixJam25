@@ -15,3 +15,9 @@ Let's just say you have to find here 2 times and then on the 3rd time is when sh
 
 Where will she be the first time? In a place somewhere. The INN keeper will give us a hint on where she might be.
 [How many buildings are going to be interactable? All of those will have to have separate scenes and dialog]
+
+
+
+11-3-2025
+1) Get Camera movement working, I think we will just follow the player around.
+	Player movement is a little slow, we can increase for testing, but will need to adjust the animation later on
