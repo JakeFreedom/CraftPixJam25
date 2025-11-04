@@ -10,6 +10,9 @@ Upon returning to your home, you find a note from your parents that reads.
 Looking around the house you can't find Neely anywhere. Let's head out into the village and find her.
 
 
+
+
+
 Let's just say you have to find here 2 times and then on the 3rd time is when she is taken by the end boss which will be the cute but dangerous factor.
 
 
@@ -21,3 +24,5 @@ Where will she be the first time? In a place somewhere. The INN keeper will give
 11-3-2025
 1) Get Camera movement working, I think we will just follow the player around.
 	Player movement is a little slow, we can increase for testing, but will need to adjust the animation later on
+2) Got some buildings made, that is a slow process
+3) Entering building dialog created but needs work.
