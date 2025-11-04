@@ -2,7 +2,7 @@ extends Area2D
 
 @export var EnterBuildingDialog: PackedScene
 #Pre load the scene
-var insideHouseScene = preload("res://MainHouse.tscn")
+var insideHouseScene = preload("res://House/MainHouse.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,5 +25,6 @@ func EnterHouse(otherBody: Node2D) -> void:
 	#call_deferred("ChangeToInsideHouseScene")
 	
 func ChangeToInsideHouseScene() -> void:
-	get_tree().change_scene_to_packed(insideHouseScene)
+	#get_tree().change_scene_to_packed(insideHouseScene)
+	pass
 	

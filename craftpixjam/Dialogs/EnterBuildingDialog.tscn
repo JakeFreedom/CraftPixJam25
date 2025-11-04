@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc323xn8fbibg"]
 
-[ext_resource type="Script" uid="uid://bf4kyouhw0wh1" path="res://EnterBuildingDialog.gd" id="1_u4vhd"]
+[ext_resource type="Script" uid="uid://bf4kyouhw0wh1" path="res://Dialogs/EnterBuildingDialog.gd" id="1_u4vhd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

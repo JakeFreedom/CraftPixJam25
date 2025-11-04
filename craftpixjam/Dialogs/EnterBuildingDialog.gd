@@ -3,6 +3,10 @@ extends Control
 @onready var btn_no: Button = $PanelContainer/HBoxContainer/VBoxContainer/btnNo
 @onready var dialogMessageBox: RichTextLabel = $PanelContainer/HBoxContainer/VBoxContainer/RichTextLabel
 
+
+#Pre load the scene
+var insideHouseScene = preload("res://House/MainHouse.tscn")
+
 @export var dialogMessage: String = ""
 
 # Called when the node enters the scene tree for the first time.
@@ -25,8 +29,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func btnYes_onPressed() -> void:
-	print("Load house scene")
+	get_tree().paused = false;
+	get_tree().change_scene_to_packed(insideHouseScene)
+	call_deferred("queue_free")
 func btnNo_onPressed() -> void:
-	print("close dialog")
 	call_deferred("queue_free")
 	get_tree().paused = false
