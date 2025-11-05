@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dteeskxjqkdxi"
-path="res://.godot/imported/DownAnimation.png-04b15083e539ecbcb144f585ad3329fe.ctex"
+uid="uid://dsa4gdiehjo0s"
+path="res://.godot/imported/WalkUpAnimation.png-291e8a8a06b478fb0517846031b31aff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://InnKeeper/DownAnimation.png"
-dest_files=["res://.godot/imported/DownAnimation.png-04b15083e539ecbcb144f585ad3329fe.ctex"]
+source_file="res://NPCs/Mira/WalkUpAnimation.png"
+dest_files=["res://.godot/imported/WalkUpAnimation.png-291e8a8a06b478fb0517846031b31aff.ctex"]
 
 [params]
 

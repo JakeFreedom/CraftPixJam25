@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsynehfdhmy81"]
+
+[ext_resource type="Texture2D" uid="uid://b2qkm0m2h4sas" path="res://NPCs/Mira/WalkDownAnimation.png" id="1_ancoq"]
+[ext_resource type="Script" uid="uid://bx8ipa8dwuh5" path="res://NPCs/Mira/Mira.gd" id="1_i6hah"]
+[ext_resource type="Texture2D" uid="uid://dsa4gdiehjo0s" path="res://NPCs/Mira/WalkUpAnimation.png" id="2_phxgk"]
+[ext_resource type="Script" uid="uid://ckkw3fnigitnx" path="res://NPCs/Mira/MiraPlayerDetector.gd" id="3_phxgk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sje5p"]
+radius = 7.0
+height = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6hah"]
+size = Vector2(12, 20)
+
+[sub_resource type="Animation" id="Animation_i6hah"]
+resource_name = "WalkDown"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.301148, 0.600908, 0.903444, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ttj47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/WalkUp:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mdftm"]
+resource_name = "WalkUp"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkUp:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.301247, 0.599469, 0.901595, 1.19992),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xh1mo"]
+_data = {
+&"RESET": SubResource("Animation_ttj47"),
+&"WalkDown": SubResource("Animation_i6hah"),
+&"WalkUp": SubResource("Animation_mdftm")
+}
+
+[node name="Mira" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_i6hah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_sje5p")
+
+[node name="WalkDown" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+texture = ExtResource("1_ancoq")
+hframes = 3
+
+[node name="WalkUp" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+texture = ExtResource("2_phxgk")
+hframes = 3
+
+[node name="Idle" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ancoq")
+hframes = 3
+
+[node name="PlayerDetector" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("3_phxgk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
+shape = SubResource("RectangleShape2D_i6hah")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xh1mo")
+}

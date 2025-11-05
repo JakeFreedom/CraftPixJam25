@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdiqkkkmn2muc" path="res://Inn/inn_inside_view.gd" id="1_5m4g6"]
 [ext_resource type="Texture2D" uid="uid://4ch1gbr3wsrp" path="res://TileSets/inside.png" id="1_5306r"]
-[ext_resource type="PackedScene" uid="uid://buymrm2ay1mfg" path="res://InnKeeper/InnKeeper.tscn" id="3_jpb1w"]
+[ext_resource type="PackedScene" uid="uid://buymrm2ay1mfg" path="res://NPCs/InnKeeper/InnKeeper.tscn" id="3_jpb1w"]
 [ext_resource type="Script" uid="uid://dkkm1em62e06b" path="res://Inn/inn_insideDoorDetector.gd" id="3_ovrhv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjwbo"]

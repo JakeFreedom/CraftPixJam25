@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://buymrm2ay1mfg"]
+[gd_scene load_steps=12 format=3 uid="uid://buymrm2ay1mfg"]
 
-[ext_resource type="Texture2D" uid="uid://bu7jwnfnaltpl" path="res://InnKeeper/LeftAnimation.png" id="1_lrol1"]
-[ext_resource type="Script" uid="uid://docaw5isja32h" path="res://InnKeeper/InnKeeper.gd" id="1_si2vg"]
-[ext_resource type="Texture2D" uid="uid://rvi3ar46lx1c" path="res://InnKeeper/WalkRightAnimation.png" id="2_1ak4j"]
-[ext_resource type="Texture2D" uid="uid://dteeskxjqkdxi" path="res://InnKeeper/DownAnimation.png" id="3_15ae4"]
+[ext_resource type="Texture2D" uid="uid://bu7jwnfnaltpl" path="res://NPCs/InnKeeper/LeftAnimation.png" id="1_lrol1"]
+[ext_resource type="Script" uid="uid://docaw5isja32h" path="res://NPCs/InnKeeper/InnKeeper.gd" id="1_si2vg"]
+[ext_resource type="Texture2D" uid="uid://rvi3ar46lx1c" path="res://NPCs/InnKeeper/WalkRightAnimation.png" id="2_1ak4j"]
+[ext_resource type="Texture2D" uid="uid://dteeskxjqkdxi" path="res://NPCs/InnKeeper/DownAnimation.png" id="3_15ae4"]
+[ext_resource type="Script" uid="uid://cx6jfnc83m0y7" path="res://NPCs/InnKeeper/InnKeeperPlayerDetector.gd" id="5_jd4av"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvc1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_012x4"]
+size = Vector2(15, 20)
 
 [sub_resource type="Animation" id="Animation_1ak4j"]
 length = 0.001
@@ -78,7 +82,7 @@ _data = {
 [node name="InnKeeper" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 4
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_si2vg")
 
@@ -98,6 +102,13 @@ hframes = 3
 [node name="FaceDown" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("3_15ae4")
 hframes = 3
+
+[node name="PlayerDetector" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("5_jd4av")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_012x4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

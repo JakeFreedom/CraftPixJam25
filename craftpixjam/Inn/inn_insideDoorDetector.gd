@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func ExitInn(otherBody: Node2D) -> void:
-	GlobalVars.playerLoadPosition = Vector2(-24,-447)
+	GlobalVars.playerLoadPosition = Vector2(-24,-400)
 	GlobalVars.LoadVillageScene()
 	
 	call_deferred("queue_free")
