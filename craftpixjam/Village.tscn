@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bcij8tx8foku"]
+[gd_scene load_steps=12 format=4 uid="uid://bcij8tx8foku"]
 
 [ext_resource type="Texture2D" uid="uid://cn4r8pxt51ls4" path="res://TileSets/terrain.png" id="1_mrgdo"]
 [ext_resource type="Script" uid="uid://dt5838kikj7k6" path="res://village.gd" id="1_vs1od"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dl87aufrmjr6u" path="res://Inn/InnOutsideView.tscn" id="4_vyubr"]
 [ext_resource type="PackedScene" uid="uid://b1vg11b8f7bor" path="res://small_npc_house.tscn" id="5_887na"]
 [ext_resource type="PackedScene" uid="uid://qaxedlh8q8dp" path="res://npc_house_no_yard.tscn" id="6_epn2x"]
-[ext_resource type="PackedScene" uid="uid://ciwwybv25r80m" path="res://library.tscn" id="7_utxl7"]
+[ext_resource type="PackedScene" uid="uid://ciwwybv25r80m" path="res://Library/library.tscn" id="7_utxl7"]
+[ext_resource type="PackedScene" uid="uid://vnaai7glwpuc" path="res://market_outside.tscn" id="8_v7vfu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hx6cv"]
 texture = ExtResource("1_mrgdo")
@@ -122,3 +123,6 @@ position = Vector2(-233, 202)
 
 [node name="Library" parent="." instance=ExtResource("7_utxl7")]
 position = Vector2(-539, -291)
+
+[node name="MarketOutside" parent="." instance=ExtResource("8_v7vfu")]
+position = Vector2(364, 460)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://ciwwybv25r80m"]
+[gd_scene load_steps=15 format=4 uid="uid://ciwwybv25r80m"]
 
 [ext_resource type="Texture2D" uid="uid://bda7df7dv6d1v" path="res://TileSets/house.png" id="1_2cia1"]
 [ext_resource type="Texture2D" uid="uid://cvbotflpn4oqw" path="res://TileSets/outside.png" id="2_olk84"]
 [ext_resource type="Texture2D" uid="uid://cn4r8pxt51ls4" path="res://TileSets/terrain.png" id="3_x5gbn"]
+[ext_resource type="Script" uid="uid://cjey8y1rfctuu" path="res://Library/LibOutsideDoorDetector.gd" id="4_yd1qa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olk84"]
 texture = ExtResource("1_2cia1")
@@ -7911,6 +7912,7 @@ tile_set = SubResource("TileSet_xna2n")
 position = Vector2(160, 94)
 
 [node name="Area2D" type="Area2D" parent="DoorDetector"]
+script = ExtResource("4_yd1qa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDetector/Area2D"]
 position = Vector2(-2, 1)
