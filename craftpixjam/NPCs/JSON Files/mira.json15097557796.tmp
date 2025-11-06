@@ -1,0 +1,38 @@
+{
+	"NPC": [
+		{
+			"NPCID": "1",
+			"NAME": "Mira",
+			"InitialSpeach": "Hello Sparrow!",
+			"Questions": [
+				{
+					"QUESTION": "Have you seen Neely?",
+					"RESPONSE": "I have not, I have just begun my afternoon walk."
+				},
+				{
+					"QUESTION": "What's new around here?",
+					"RESPONSE": "Oh, glad you asked, the new market is fantastic!"
+				}
+			]
+		},
+		{
+			"NPCID": "2",
+			"NAME": "Mira",
+			"InitialSpeach": "Hello Sparrow!",
+			"Questions": [
+				{
+					"QUESTIONID": "1",
+					"QUESTION": "Have you seen Neely?",
+					"RESPONSEID": "1",
+					"RESPONSE": "I have not, I have just begun my afternoon walk."
+				},
+				{
+					"QUESTIONID": "2",
+					"QUESTION": "What's new around here?",
+					"RESPONSEID": "2",
+					"RESPONSE": "Oh, glad you asked, the new market is fantastic!"
+				}
+			]
+		}
+	]
+}

@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsynehfdhmy81"]
+[gd_scene load_steps=17 format=3 uid="uid://bsynehfdhmy81"]
 
 [ext_resource type="Texture2D" uid="uid://b2qkm0m2h4sas" path="res://NPCs/Mira/WalkDownAnimation.png" id="1_ancoq"]
 [ext_resource type="Script" uid="uid://bx8ipa8dwuh5" path="res://NPCs/Mira/Mira.gd" id="1_i6hah"]
 [ext_resource type="Texture2D" uid="uid://dsa4gdiehjo0s" path="res://NPCs/Mira/WalkUpAnimation.png" id="2_phxgk"]
 [ext_resource type="Script" uid="uid://ckkw3fnigitnx" path="res://NPCs/Mira/MiraPlayerDetector.gd" id="3_phxgk"]
+[ext_resource type="Texture2D" uid="uid://c7tlpipxd5qjk" path="res://NPCs/Mira/Cloud_03.png" id="5_ttj47"]
+[ext_resource type="Texture2D" uid="uid://bbijh2fywieho" path="res://NPCs/Mira/Cloud_01.png" id="6_mdftm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sje5p"]
 radius = 7.0
@@ -12,21 +14,46 @@ height = 25.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6hah"]
 size = Vector2(12, 20)
 
-[sub_resource type="Animation" id="Animation_i6hah"]
-resource_name = "WalkDown"
-length = 1.22
+[sub_resource type="LabelSettings" id="LabelSettings_mdftm"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xh1mo"]
+resource_name = "BubbleBobble"
+length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
-tracks/0/interp = 2
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.301148, 0.600908, 0.903444, 1.2),
+"times": PackedFloat32Array(0, 0.299501, 0.599002, 0.899858, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1, 0]
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t504k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a031c"]
+_data = {
+&"BubbleBobble": SubResource("Animation_xh1mo"),
+&"RESET": SubResource("Animation_t504k")
 }
 
 [sub_resource type="Animation" id="Animation_ttj47"]
@@ -54,6 +81,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody2D/SpeachBubbles:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i6hah"]
+resource_name = "WalkDown"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.301148, 0.600908, 0.903444, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_mdftm"]
@@ -109,6 +165,40 @@ script = ExtResource("3_phxgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
 shape = SubResource("RectangleShape2D_i6hah")
+
+[node name="SpeachBubbles" type="Node2D" parent="CharacterBody2D"]
+
+[node name="WalkThink" type="Sprite2D" parent="CharacterBody2D/SpeachBubbles"]
+position = Vector2(-25, -27)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_ttj47")
+
+[node name="Speak" type="Sprite2D" parent="CharacterBody2D/SpeachBubbles"]
+visible = false
+position = Vector2(-103, -88)
+scale = Vector2(1.05, 0.085)
+texture = ExtResource("6_mdftm")
+
+[node name="Label" type="Label" parent="CharacterBody2D/SpeachBubbles"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -40.0
+offset_right = -14.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "? ? ?"
+label_settings = SubResource("LabelSettings_mdftm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/SpeachBubbles"]
+libraries = {
+&"": SubResource("AnimationLibrary_a031c")
+}
+autoplay = "BubbleBobble"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

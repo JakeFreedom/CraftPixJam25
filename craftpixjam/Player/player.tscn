@@ -139,7 +139,7 @@ height = 20.0
 z_index = 1
 
 [node name="PlayerBody" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(283, 152)
+position = Vector2(281, 150)
 collision_mask = 2
 script = ExtResource("1_sweqy")
 
@@ -182,3 +182,6 @@ centered = false
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
 position = Vector2(37, 30)
+
+[node name="DialogControl" type="Node2D" parent="PlayerBody"]
+position = Vector2(-278, -145)
