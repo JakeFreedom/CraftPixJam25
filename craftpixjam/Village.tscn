@@ -116,7 +116,7 @@ position = Vector2(399, 92)
 position = Vector2(736, 202)
 
 [node name="NPC_HOUSE_No_Yard3" parent="NPCHouses" instance=ExtResource("6_epn2x")]
-position = Vector2(-209, -1152)
+position = Vector2(-209, -815)
 rotation = 1.5708
 
 [node name="NPC_HOUSE_No_Yard" parent="NPCHouses" instance=ExtResource("6_epn2x")]

@@ -11,8 +11,8 @@
 radius = 7.0
 height = 25.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6hah"]
-size = Vector2(12, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdftm"]
+radius = 18.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_mdftm"]
 font_size = 12
@@ -164,7 +164,7 @@ hframes = 3
 script = ExtResource("3_phxgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
-shape = SubResource("RectangleShape2D_i6hah")
+shape = SubResource("CircleShape2D_mdftm")
 
 [node name="SpeachBubbles" type="Node2D" parent="CharacterBody2D"]
 

@@ -14,5 +14,7 @@ func _process(delta: float) -> void:
 
 func CheckHit(otherBody: Node2D) -> void:
 	if otherBody is Player:
-		print("The player touched me")
+		#print("The player touched me")
+		var parentScript = get_parent()
+		otherBody.TriggerDialog(parentScript.dialogFile, parentScript.NPCID)
 		#Here we will pop up the dialog where she tells us about Mira

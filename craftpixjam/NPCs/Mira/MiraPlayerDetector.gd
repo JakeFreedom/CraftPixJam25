@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 	
 	
 func OnBody_Entered(otherBody: Node2D) -> void:
-	print(otherBody)
+	if otherBody is Player:
+		otherBody.TriggerDialog(get_parent().dialogFile, get_parent().NPCID)

@@ -3,6 +3,7 @@
 		{
 			"NPCID": "1",
 			"NAME": "Mira",
+			"SPRITE": "res://NPCs/Mira/WalkDownAnimation.png",
 			"InitialSpeach": "Hello Sparrow!",
 			"Questions": [
 				{

@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://d14tyv8tsximi"]
+
+[ext_resource type="Script" uid="uid://cuagloy4vdfvu" path="res://NPCs/Breahley/BreahleyNPC.gd" id="1_rw3gs"]
+[ext_resource type="Texture2D" uid="uid://v0ra6151ramy" path="res://NPCs/Breahley/WalkingDown.png" id="1_x5ja4"]
+[ext_resource type="Texture2D" uid="uid://cc5jvhtmneaee" path="res://NPCs/Breahley/WalkingLeft.png" id="3_belbs"]
+[ext_resource type="Texture2D" uid="uid://x1ed88p4ydqw" path="res://NPCs/Breahley/WalkingRight.png" id="4_ko13n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rw3gs"]
+radius = 8.0
+height = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_belbs"]
+radius = 17.0
+
+[sub_resource type="Animation" id="Animation_rw3gs"]
+resource_name = "WalkDown"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.301615, 0.602146, 0.901591, 1.19993),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_belbs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/WalkLeft:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody2D/WalkRight:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ko13n"]
+resource_name = "WalkLeft"
+length = 1.21
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkLeft:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.302059, 0.598346, 0.900405, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_33lsy"]
+resource_name = "WalkRight"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkRight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.300829, 0.595935, 0.9, 1.20134),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ko13n"]
+_data = {
+&"RESET": SubResource("Animation_belbs"),
+&"WalkDown": SubResource("Animation_rw3gs"),
+&"WalkLeft": SubResource("Animation_ko13n"),
+&"WalkRight": SubResource("Animation_33lsy")
+}
+
+[node name="Breahley" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("1_rw3gs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_rw3gs")
+
+[node name="PlayerDetector" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
+shape = SubResource("CircleShape2D_belbs")
+
+[node name="WalkDown" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+texture = ExtResource("1_x5ja4")
+hframes = 3
+
+[node name="WalkLeft" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+texture = ExtResource("3_belbs")
+hframes = 3
+
+[node name="WalkRight" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("4_ko13n")
+hframes = 3
+
+[node name="Idle" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ko13n")
+}

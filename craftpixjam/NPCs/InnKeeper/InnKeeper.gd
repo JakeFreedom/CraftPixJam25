@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 
 
+var dialogFile = "res://NPCs/JSON Files/innkeeper.json"
+var NPCID: int = 2
+
 const SPEED = 20.0
 const JUMP_VELOCITY = -400.0
 var direction = Vector2.LEFT

@@ -11,6 +11,7 @@ const JUMP_VELOCITY = -400.0
 @onready var walk_right: Sprite2D = $WalkRight
 @onready var walk_up: Sprite2D = $WalkUp
 
+var dialogScene = preload("res://dialog.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -60,3 +61,11 @@ func set_animation(direction: Vector2) -> void:
 		walk_left.visible = false;
 		walk_right.visible = true;
 		
+func TriggerDialog(dialogFile: String, npcID: int) -> void:
+	get_tree().paused = true
+	var dialog = dialogScene.instantiate()
+	dialog.dialogJsonFile = dialogFile
+	dialog.npcID = npcID
+	dialog.z_index = 10
+	get_tree().get_first_node_in_group("Player").get_node("DialogControl").add_child(dialog)
+	

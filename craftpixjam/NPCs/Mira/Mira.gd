@@ -8,6 +8,8 @@ var directionTimer: Timer
 const SPEED = 50.0
 const JUMP_VELOCITY = -400.0
 
+var dialogFile = "res://NPCs/JSON Files/mira.json"
+var NPCID: int = 1
 
 func _ready() -> void:
 	directionTimer = Timer.new()

@@ -1,0 +1,26 @@
+{
+	"NPC": [
+		{
+			"NPCID": "2",
+			"NAME": "DiaJornin",
+			"SPRITE": "res://NPCs/InnKeeper/DownAnimation.png",
+			"InitialSpeach": "Hello Sparrow! How are you doing today?",
+			"Questions": [
+				{
+					"QUESTIONID":"1",
+					"KEY_ID":"49",
+					"QUESTION": "I am doing well; I am looking for Neely, have you seen her?",
+					"RESPONSEID": "1",
+					"RESPONSE": "I have not seen her today, but I did hear Mira mention something about seeing here earlier this morning."
+				},
+				{
+					"QUESTIONID":"2",
+					"KEY_ID": "50",
+					"QUESTION": "What's new around here?",
+					"RESPONSEID":"2",
+					"RESPONSE": "Oh, glad you asked, the new market is fantastic!"
+				}
+			]
+		}
+	]
+}

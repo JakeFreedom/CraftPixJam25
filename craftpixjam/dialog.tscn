@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccms357tp8n3y"]
+[gd_scene load_steps=8 format=3 uid="uid://ccms357tp8n3y"]
 
 [ext_resource type="Script" uid="uid://dnbjc52wh53fy" path="res://dialog.gd" id="1_7voku"]
 [ext_resource type="Texture2D" uid="uid://bbijh2fywieho" path="res://NPCs/Mira/Cloud_01.png" id="2_4uc3s"]
@@ -11,6 +11,10 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxi5t"]
 font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_37fld"]
+font_size = 18
 font_color = Color(0, 0, 0, 1)
 
 [node name="Dialog" type="Control"]
@@ -29,7 +33,7 @@ scale = Vector2(1.225, 1.075)
 texture = ExtResource("2_4uc3s")
 
 [node name="NPC" type="Sprite2D" parent="."]
-position = Vector2(40, 46)
+position = Vector2(55, 48)
 scale = Vector2(3, 3)
 texture = ExtResource("3_rxi5t")
 hframes = 3
@@ -41,27 +45,35 @@ texture = ExtResource("4_37fld")
 hframes = 3
 
 [node name="DialogTextNPC" type="Label" parent="."]
-custom_minimum_size = Vector2(445, 100)
+custom_minimum_size = Vector2(535, 150)
 layout_mode = 0
-offset_left = 73.0
+offset_left = 97.0
 offset_top = 6.0
-offset_right = 573.0
-offset_bottom = 106.0
-text = "[Questions]"
+offset_right = 632.0
+offset_bottom = 156.0
+text = "[GREETING]"
 label_settings = SubResource("LabelSettings_4uc3s")
-horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="DialogTextPlayer" type="Label" parent="."]
-custom_minimum_size = Vector2(445, 100)
+custom_minimum_size = Vector2(475, 200)
 layout_mode = 0
-offset_left = 37.0
-offset_top = 252.0
-offset_right = 482.0
-offset_bottom = 352.0
+offset_left = 72.0
+offset_top = 159.0
+offset_right = 517.0
+offset_bottom = 359.0
 text = "[Questions to ask NPC]"
 label_settings = SubResource("LabelSettings_rxi5t")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="NPCName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 92.0
+offset_right = 102.0
+offset_bottom = 118.0
+text = "[npc name]"
+label_settings = SubResource("LabelSettings_37fld")
+horizontal_alignment = 1
