@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ccms357tp8n3y"]
 
-[ext_resource type="Script" uid="uid://dnbjc52wh53fy" path="res://dialog.gd" id="1_7voku"]
-[ext_resource type="Texture2D" uid="uid://bbijh2fywieho" path="res://NPCs/Mira/Cloud_01.png" id="2_4uc3s"]
-[ext_resource type="Texture2D" uid="uid://b2qkm0m2h4sas" path="res://NPCs/Mira/WalkDownAnimation.png" id="3_rxi5t"]
-[ext_resource type="Texture2D" uid="uid://d2ef1qtv7vp6e" path="res://Player/Images/WalkDown-2.png" id="4_37fld"]
+[ext_resource type="Script" uid="uid://dnbjc52wh53fy" path="res://NPCDialog/dialog.gd" id="1_5cmvd"]
+[ext_resource type="Texture2D" uid="uid://bbijh2fywieho" path="res://NPCs/Mira/Cloud_01.png" id="2_26u8k"]
+[ext_resource type="Texture2D" uid="uid://b2qkm0m2h4sas" path="res://NPCs/Mira/WalkDownAnimation.png" id="3_re7td"]
+[ext_resource type="Texture2D" uid="uid://d2ef1qtv7vp6e" path="res://Player/Images/WalkDown-2.png" id="4_vk5le"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4uc3s"]
 font_size = 20
@@ -25,23 +25,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7voku")
+script = ExtResource("1_5cmvd")
 
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(333, 243)
 scale = Vector2(1.225, 1.075)
-texture = ExtResource("2_4uc3s")
+texture = ExtResource("2_26u8k")
 
 [node name="NPC" type="Sprite2D" parent="."]
 position = Vector2(55, 48)
 scale = Vector2(3, 3)
-texture = ExtResource("3_rxi5t")
+texture = ExtResource("3_re7td")
 hframes = 3
 
 [node name="Player" type="Sprite2D" parent="."]
 position = Vector2(598, 310)
 scale = Vector2(3, 3)
-texture = ExtResource("4_37fld")
+texture = ExtResource("4_vk5le")
 hframes = 3
 
 [node name="DialogTextNPC" type="Label" parent="."]
@@ -64,7 +64,6 @@ offset_right = 517.0
 offset_bottom = 359.0
 text = "[Questions to ask NPC]"
 label_settings = SubResource("LabelSettings_rxi5t")
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 

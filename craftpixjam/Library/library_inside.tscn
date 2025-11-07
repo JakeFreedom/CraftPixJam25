@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://b1edqpe0ioxb7"]
+[gd_scene load_steps=15 format=4 uid="uid://b1edqpe0ioxb7"]
 
 [ext_resource type="Texture2D" uid="uid://bda7df7dv6d1v" path="res://TileSets/house.png" id="1_asrmv"]
 [ext_resource type="Script" uid="uid://cp2ctx2r3t6u5" path="res://Library/library_inside.gd" id="1_fhkxs"]
 [ext_resource type="Texture2D" uid="uid://4ch1gbr3wsrp" path="res://TileSets/inside.png" id="2_rsckk"]
 [ext_resource type="Script" uid="uid://qdkoi38soo16" path="res://Library/LibInsideDoorDetector.gd" id="5_i2thf"]
+[ext_resource type="Script" uid="uid://desotuotxuw78" path="res://Library/LibraryTableDetector.gd" id="5_t3ann"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fs1q"]
 texture = ExtResource("1_asrmv")
@@ -5049,7 +5050,10 @@ terrain_set_0/terrain_0/color = Color(0.227383, 0.447166, 0.140998, 1)
 sources/0 = SubResource("TileSetAtlasSource_kdwjr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3ann"]
-size = Vector2(18, 32)
+size = Vector2(9, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ssm"]
+size = Vector2(49.5, 37)
 
 [node name="Library_Inside" type="Node2D"]
 script = ExtResource("1_fhkxs")
@@ -5073,5 +5077,13 @@ position = Vector2(229, 107)
 script = ExtResource("5_i2thf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDetector/Area2D"]
-position = Vector2(1, 5)
+position = Vector2(1.5, 5)
 shape = SubResource("RectangleShape2D_t3ann")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(69, 118)
+script = ExtResource("5_t3ann")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.75, -3.5)
+shape = SubResource("RectangleShape2D_33ssm")

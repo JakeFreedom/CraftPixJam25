@@ -11,7 +11,7 @@ const JUMP_VELOCITY = -400.0
 @onready var walk_right: Sprite2D = $WalkRight
 @onready var walk_up: Sprite2D = $WalkUp
 
-var dialogScene = preload("res://dialog.tscn")
+var dialogScene = preload("res://NPCDialog/dialog.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

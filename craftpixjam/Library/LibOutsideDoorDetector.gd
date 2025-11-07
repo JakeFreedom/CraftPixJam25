@@ -8,6 +8,6 @@ func _ready() -> void:
 	
 func EnterLibrary(otherBody: Node2D) -> void:
 	GlobalVars.playerLoadPosition = Vector2(158, 92)
-	get_tree().change_scene_to_packed(libraryInside)
+	get_tree().call_deferred("change_scene_to_packed",libraryInside)
 	call_deferred("queue_free")
 	

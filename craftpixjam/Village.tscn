@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vg11b8f7bor" path="res://NPC Houses/small_npc_house.tscn" id="5_887na"]
 [ext_resource type="PackedScene" uid="uid://qaxedlh8q8dp" path="res://NPC Houses/npc_house_no_yard.tscn" id="6_epn2x"]
 [ext_resource type="PackedScene" uid="uid://ciwwybv25r80m" path="res://Library/library.tscn" id="7_utxl7"]
-[ext_resource type="PackedScene" uid="uid://vnaai7glwpuc" path="res://market_outside.tscn" id="8_v7vfu"]
+[ext_resource type="PackedScene" uid="uid://vnaai7glwpuc" path="res://Market/market_outside.tscn" id="8_v7vfu"]
 [ext_resource type="PackedScene" uid="uid://bsynehfdhmy81" path="res://NPCs/Mira/mira.tscn" id="9_qmwm1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hx6cv"]

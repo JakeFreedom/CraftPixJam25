@@ -1,0 +1,41 @@
+{
+	"NPC": [
+		{
+			"NPCID": "3",
+			"NAME": "Breahley",
+			"SPRITE": "res://NPCs/Breahley/WalkingDown.png",
+			"InitialSpeach": "Hello, how can I help you today?",
+			"Questions": [
+				{
+					"QUESTIONID": "1",
+					"KEY_ID": "49",
+					"QUESTION": "This place is messy, you still getting setup?",
+					"RESPONSEID": "1",
+					"RESPONSE": "Yes, sorry about the mess. I working sun to sun down to get this place in order."
+				},
+				{
+					"QUESTIONID": "2",
+					"KEY_ID": "50",
+					"QUESTION": "What's good around here?",
+					"RESPONSEID": "2",
+					"RESPONSE": "Everything of course, but my favorite are my home grown pumpkins. They make the best pie!"
+				},
+				{
+					"QUESTIONID": "3",
+					"KEY_ID": "51",
+					"QUESTION": "Have you by chance seen my sister, Neely?",
+					"RESPONSEID": "3",
+					"RESPONSE": "I am not sure I know what she looks like, so I can't say that I have."
+					
+				},
+				{
+					"QUESTIONID": "4",
+					"KEY_ID": "52",
+					"QUESTION": "How do you know Mira?",
+					"RESPONSEID": "4",
+					"RESPONSE": "We met at the library. Have you been there yet, always great knowledge to be had!"
+				}
+			]
+		}
+	]
+}

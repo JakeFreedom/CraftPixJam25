@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://d14tyv8tsximi"]
+[gd_scene load_steps=13 format=3 uid="uid://d14tyv8tsximi"]
 
 [ext_resource type="Script" uid="uid://cuagloy4vdfvu" path="res://NPCs/Breahley/BreahleyNPC.gd" id="1_rw3gs"]
 [ext_resource type="Texture2D" uid="uid://v0ra6151ramy" path="res://NPCs/Breahley/WalkingDown.png" id="1_x5ja4"]
+[ext_resource type="Script" uid="uid://c61nykxgm5iau" path="res://NPCs/Breahley/player_detector.gd" id="2_33lsy"]
 [ext_resource type="Texture2D" uid="uid://cc5jvhtmneaee" path="res://NPCs/Breahley/WalkingLeft.png" id="3_belbs"]
 [ext_resource type="Texture2D" uid="uid://x1ed88p4ydqw" path="res://NPCs/Breahley/WalkingRight.png" id="4_ko13n"]
 
@@ -11,23 +12,6 @@ height = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_belbs"]
 radius = 17.0
-
-[sub_resource type="Animation" id="Animation_rw3gs"]
-resource_name = "WalkDown"
-length = 1.22
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.301615, 0.602146, 0.901591, 1.19993),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1, 0]
-}
 
 [sub_resource type="Animation" id="Animation_belbs"]
 length = 0.001
@@ -66,6 +50,23 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rw3gs"]
+resource_name = "WalkDown"
+length = 1.22
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/WalkDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.301615, 0.602146, 0.901591, 1.19993),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_ko13n"]
@@ -114,6 +115,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_rw3gs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -121,6 +123,7 @@ shape = SubResource("CapsuleShape2D_rw3gs")
 
 [node name="PlayerDetector" type="Area2D" parent="CharacterBody2D"]
 collision_layer = 16
+script = ExtResource("2_33lsy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/PlayerDetector"]
 shape = SubResource("CircleShape2D_belbs")

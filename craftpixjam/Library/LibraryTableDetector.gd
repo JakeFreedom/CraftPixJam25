@@ -3,7 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body_entered.connect(doorDetector_onEntered)
+	body_entered.connect(ExamineTable)
 	pass # Replace with function body.
 
 
@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 	pass
 	
 	
-func doorDetector_onEntered(otherBody: Node2D) -> void:
-	GlobalVars.playerLoadPosition = Vector2(152,182)
-	GlobalVars.call_deferred("LoadVillageScene")
-	call_deferred("queue_free")
+func ExamineTable(otherBody: Node2D) -> void:
+	if otherBody is Player:
+		print("Check if we have seen Breahley")

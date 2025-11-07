@@ -1,18 +1,13 @@
-extends Area2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body_entered.connect(doorDetector_onEntered)
+	var player = get_tree().get_first_node_in_group("Player") as Player
+	player.global_position = GlobalVars.playerLoadPosition
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
-func doorDetector_onEntered(otherBody: Node2D) -> void:
-	GlobalVars.playerLoadPosition = Vector2(152,182)
-	GlobalVars.call_deferred("LoadVillageScene")
-	call_deferred("queue_free")
