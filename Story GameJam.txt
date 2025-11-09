@@ -1,7 +1,7 @@
 Story--
 	You have returned to your home village after some time away learning more about your cultures history.
 Upon returning to your home, you find a note from your parents that reads.
-	"Dear Sparrow, We are taking a few weeks to go visit your grand parents. We are leaving you in charge of the house hold. You are responsible for making sure Neely is taken care of. Make sure she is in the house every evening by [TIME]. Also, you have to be sure to feed Sampson 3 times a day. If you have any troubles, you can go see Mr. Hickory the INN keeper, he might be able to lend a helping hand if needed. Please be careful and don't have too much fun."
+	"Dear Sparrow, We are taking a couple days to go visit your grand parents. We are leaving you in charge of the house hold. You are responsible for making sure Neely is taken care of. Make sure she is in the house before night. Also, you have to be sure to feed Sampson 3 times a day. If you have any troubles, you can go see DiaJornin the INN keeper, she might be able to lend a helping hand if needed. Please be careful and don't have too much fun."
 	--Mom & Dad
 
 

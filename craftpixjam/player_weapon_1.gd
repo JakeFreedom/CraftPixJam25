@@ -15,11 +15,12 @@ func _ready() -> void:
 	if direction == Vector2.UP:
 		weapon.rotate(deg_to_rad(-45.0))
 		
-	get_tree().create_timer(3.0, true, true,false).timeout.connect(RemoveFromScene)
+	get_tree().create_timer(1.5, true, true,false).timeout.connect(RemoveFromScene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	weapon.global_position += direction * speed * delta
+	pass
 	
 func RemoveFromScene() -> void:
 	call_deferred("queue_free")

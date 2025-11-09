@@ -13,10 +13,12 @@ var playerFacingDirection: int = 1
 var SEEN_IN_KEEPER: bool = false #DiaJornin Inn Keeper(obviously)
 var SEEN_MIRA: bool = false #NPC on the pathway
 var SEEN_BREAHLEY: bool = false #Market NPC
-var HAVE_SWORD: bool = false
+var HAVE_SWORD: bool = true
 var BEEN_TO_BARCLAY: bool = false
 var BEEN_TO_FOREST: bool = false
+var HAD_READ_PARENT_NOTE: bool = false
 
+var MIRA_ENABLED: bool = false
 
 func _ready() -> void:
 	var player = playerScene.instantiate()

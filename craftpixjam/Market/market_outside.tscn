@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4r8pxt51ls4" path="res://TileSets/terrain.png" id="2_mrmvx"]
 [ext_resource type="Texture2D" uid="uid://4ch1gbr3wsrp" path="res://TileSets/inside.png" id="2_st428"]
 [ext_resource type="Script" uid="uid://btrf2543ntr4h" path="res://Market/MarketEnterDoorDetector.gd" id="5_wfe6y"]
+[ext_resource type="PackedScene" uid="uid://ms0perqrmwp0" path="res://BuildingSign.tscn" id="6_joai6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xq41"]
 texture = ExtResource("1_st428")
@@ -9311,9 +9312,6 @@ sources/1 = SubResource("TileSetAtlasSource_kf10a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xq41"]
 size = Vector2(50, 9)
 
-[sub_resource type="LabelSettings" id="LabelSettings_wfe6y"]
-font_size = 20
-
 [node name="MarketOutside" type="Node2D"]
 
 [node name="Fence" type="TileMapLayer" parent="."]
@@ -9346,11 +9344,7 @@ script = ExtResource("5_wfe6y")
 position = Vector2(6, 3)
 shape = SubResource("RectangleShape2D_3xq41")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -30.0
-offset_top = -84.0
-offset_right = 50.0
-offset_bottom = -56.0
-text = "MARKET"
-label_settings = SubResource("LabelSettings_wfe6y")
-horizontal_alignment = 1
+[node name="Sign" parent="." instance=ExtResource("6_joai6")]
+position = Vector2(-25, -154)
+rotation = -1.5708
+SignText = "The Market"

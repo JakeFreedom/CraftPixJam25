@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://bue0s3ilrr2f6"]
+[gd_scene load_steps=11 format=4 uid="uid://bue0s3ilrr2f6"]
 
 [ext_resource type="Texture2D" uid="uid://bda7df7dv6d1v" path="res://TileSets/house.png" id="1_it7jv"]
 [ext_resource type="Texture2D" uid="uid://cvbotflpn4oqw" path="res://TileSets/outside.png" id="2_4mgib"]
 [ext_resource type="PackedScene" uid="uid://cc323xn8fbibg" path="res://Dialogs/EnterBuildingDialog.tscn" id="4_nqsf3"]
 [ext_resource type="Script" uid="uid://d1is5hdnwcfps" path="res://House/enterHouseDetector.gd" id="4_xnpuq"]
+[ext_resource type="PackedScene" uid="uid://ms0perqrmwp0" path="res://BuildingSign.tscn" id="5_pj22v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mgib"]
 texture = ExtResource("1_it7jv")
@@ -3058,3 +3059,7 @@ EnterBuildingDialog = ExtResource("4_nqsf3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDetector/Area2D"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_d5whi")
+
+[node name="Sign" parent="." instance=ExtResource("5_pj22v")]
+position = Vector2(88, 244)
+SignText = "Your House"

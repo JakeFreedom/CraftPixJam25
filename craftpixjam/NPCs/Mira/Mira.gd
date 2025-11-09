@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -400.0
 
 var dialogFile = "res://NPCs/JSON Files/mira.json"
 var NPCID: int = 1
+var ShowAndStartMoving: bool = false
 
 func _ready() -> void:
 	directionTimer = Timer.new()
@@ -22,19 +23,18 @@ func _ready() -> void:
 	ShowHideSprites()
 
 func _physics_process(delta: float) -> void:
-	velocity = direction * SPEED
-	move_and_slide()
+	if GlobalVars.MIRA_ENABLED:
+		velocity = direction * SPEED
+		move_and_slide()
 	
 	
 func ChangeDirection() -> void:
-	print("change directions")
-	print(direction)
 	direction = Vector2.DOWN if direction==Vector2.UP else Vector2.UP 
-	print(direction)
 	directionTimer.start()
 	PlayAnimation()
 	ShowHideSprites()
 	pass	
+	
 func PlayAnimation() -> void:
 	if direction == Vector2.UP:
 		animation_player.play("WalkUp")

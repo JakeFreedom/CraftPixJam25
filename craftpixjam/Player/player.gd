@@ -2,8 +2,10 @@ class_name Player
 extends CharacterBody2D
 
 @export var weaponScene: PackedScene
+@export var weaponSlashScene: PackedScene
 
-const SPEED = 225.0
+#const SPEED = 75
+const SPEED = 225
 const JUMP_VELOCITY = -400.0
 @onready var playerAnimation: AnimationPlayer = $AnimationPlayer
 @onready var walk_down: Sprite2D = $WalkDown
@@ -15,12 +17,19 @@ var dialogScene = preload("res://NPCDialog/dialog.tscn")
 var direction
 var facingDirection: Vector2 = Vector2.ZERO
 
+var stepAnimation: bool = false
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction != Vector2.ZERO:
 		facingDirection = direction
+	if Input.is_action_just_pressed("move_up")	\
+		or Input.is_action_just_pressed("move_down") \
+		or Input.is_action_just_pressed("move_left") \
+		or Input.is_action_just_pressed("move_right"):
+		stepAnimation = true
 		
 	if direction:
 		set_animation(direction)
@@ -36,14 +45,24 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	#look for input to cast our sword
 	if Input.is_action_just_pressed("cast_sword"):
-		var weaponInstance = weaponScene.instantiate()
-		weaponInstance.direction = facingDirection
-		get_node("WeaponSlot").add_child(weaponInstance)
+		if GlobalVars.HAVE_SWORD:
+			var weaponInstance = weaponScene.instantiate()
+			weaponInstance.direction = facingDirection
+			get_node("WeaponSlot").add_child(weaponInstance)
+		
+		#var weaponInstance = weaponSlashScene.instantiate()
+		#weaponInstance.direction = facingDirection
+		#get_node("WeaponSlot").add_child(weaponInstance)
 		pass
+		
+
 
 func set_animation(direction: Vector2) -> void:
 	if direction == Vector2.UP:
 		playerAnimation.play("WalkUp")
+		if stepAnimation:
+			playerAnimation.advance(0.4)
+			stepAnimation = false
 		walk_up.visible = true;
 		walk_down.visible = false;
 		walk_left.visible = false;
@@ -52,6 +71,9 @@ func set_animation(direction: Vector2) -> void:
 		
 	if direction == Vector2.DOWN:
 		playerAnimation.play("WalkDown")
+		if stepAnimation:
+			playerAnimation.advance(0.4)
+			stepAnimation = false
 		walk_up.visible = false;
 		walk_down.visible = true;
 		walk_left.visible = false;
@@ -60,6 +82,9 @@ func set_animation(direction: Vector2) -> void:
 	
 	if direction == Vector2.LEFT:
 		playerAnimation.play("WalkLeft")
+		if stepAnimation:
+			playerAnimation.advance(0.4)
+			stepAnimation = false
 		walk_up.visible = false;
 		walk_down.visible = false;
 		walk_left.visible = true;
@@ -68,6 +93,9 @@ func set_animation(direction: Vector2) -> void:
 		
 	if direction == Vector2.RIGHT:
 		playerAnimation.play("WalkRight")
+		if stepAnimation:
+			playerAnimation.advance(0.4)
+			stepAnimation = false
 		walk_up.visible = false;
 		walk_down.visible = false;
 		walk_left.visible = false;

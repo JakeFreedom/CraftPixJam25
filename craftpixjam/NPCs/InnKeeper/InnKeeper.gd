@@ -21,6 +21,7 @@ func _ready() -> void:
 	directionTimer.start()
 	
 	get_node("WalkLeft").visible = true
+	PlayAnimation()
 	get_node("FaceDown").visible = false
 	
 

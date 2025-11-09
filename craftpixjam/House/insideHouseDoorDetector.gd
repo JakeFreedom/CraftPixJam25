@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 	
 	
 func doorDetector_onEntered(otherBody: Node2D) -> void:
-	GlobalVars.playerLoadPosition = Vector2(152,182)
+	GlobalVars.playerLoadPosition = Vector2(152,200)
 	GlobalVars.call_deferred("LoadVillageScene")
 	call_deferred("queue_free")

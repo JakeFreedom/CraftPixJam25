@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func CheckHit(otherBody: Node2D) -> void:
 	if otherBody is Player:
+		GlobalVars.MIRA_ENABLED = true
 		#print("The player touched me")
 		var parentScript = get_parent()
 		otherBody.TriggerDialog(parentScript.dialogFile, parentScript.NPCID)
